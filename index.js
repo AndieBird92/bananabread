@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
 
+//
+
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  let name = req.query.name || "World";
+  res.send(`Hello ${name}!`);
 });
 
 app.listen(port, () => {
